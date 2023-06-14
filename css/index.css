@@ -21,13 +21,13 @@ body {
 
 body::before {
     content: "";
-    background: url('../image/head1.jpeg') no-repeat center center/cover;
+    background: url('../image/Abstract\ HD\ Wallpaper\ \(48\).jpg') no-repeat center center/cover;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: -1;
     width: 100%;
-    height: 74vh;
+    height: 100vh;
 }
 
 nav {
@@ -141,9 +141,9 @@ select option {
 
 
 .callnow {
-    position: absolute;
+    /* position: absolute;
     top: 10vh;
-    left: 0px;
+    left: 0px; */
     width: 100%;
     height: 7vh;
     background-color: black;
@@ -167,13 +167,15 @@ select option {
 }
 
 .firstcard {
-    width: 90%;
-    height: fit-content;
-    /* border: 1px solid black; */
+    width: 100%;
+    height: 83vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10px;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    font-family: math;
 }
 
 .headerdiv {
@@ -185,33 +187,33 @@ select option {
 }
 
 .headerdiv_icon {
-    width: 50%;
+    width: 20%;
     height: 35vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid white;
 }
 
 .headerdiv_icon img {
-    width: 50%;
-    height: 80%;
+    width: 80%;
+    height: 70%;
 }
 
 .headerdiv_name {
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     align-content: flex-start;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid white;
 }
 
 .headerdiv_name h1 {
-    font-size: 45px;
+    font-size: 3.3rem;
 }
 
 .headerdiv_content {
@@ -484,7 +486,7 @@ form {
     }
 
     body::before {
-        height: 74vh;
+        height: 100vh;
     }
 
     nav {
