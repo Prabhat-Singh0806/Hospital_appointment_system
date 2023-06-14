@@ -13,73 +13,115 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+
+        }
+
         body {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             width: 100%;
-            height: 100vh;
-            overflow: scroll;
+            /* height: 100vh; */
+            /* overflow: scroll; */
             align-content: flex-start;
         }
 
+        body::before {
+            content: "";
+            background: url('image/head1.jpeg') no-repeat center center/cover;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            width: 100%;
+            height: 78vh;
+        }
+
         nav {
+            position: sticky;
+            top: 0px;
+            left: 0px;
             display: flex;
             background-color: #007bff;
+            opacity: 0.9;
             overflow: hidden;
             margin: 0px 0px;
             width: 100%;
-            height: fit-content;
+            height: 10vh;
             flex-wrap: wrap;
             justify-content: flex-start;
             align-content: center;
         }
 
         nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            list-style: none;
             overflow: hidden;
+            width: 70%;
+            align-items: center;
         }
 
         nav li {
-            float: left;
+            display: flex;
+            height: 100%;
+            width: 11%;
+            align-items: center;
+            justify-content: center;
         }
 
         nav li a {
-            display: block;
+            display: flex;
             color: white;
-            text-align: center;
-            padding: 14px 10px;
             text-decoration: none;
-            background-color: transparent;
-            border: none;
+            width: 80%;
+            height: 60%;
+            text-align: center;
+            font-size: 1.2rem;
+            border-radius: 23px;
+            align-items: center;
+            justify-content: center;
+            transition: all 1s;
         }
 
         nav label {
-            display: block;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            float: left;
-
+            width: 10%;
         }
 
         nav li a:hover {
-            /* background-color: #111; */
-            font-weight: bold;
+            background-color: white;
+            color: black;
+
+        }
+
+        #formlogin {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
         }
 
         select {
-            display: block;
+            font-size: 1rem;
+            height: 60%;
+            width: 80%;
+            border-radius: 23px;
             color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
             background-color: transparent;
             border: none;
             outline: none;
+            transition: all 1s;
+        }
+
+        nav ul li form select:hover {
+            background-color: white;
+            color: black;
         }
 
         select option:disabled {
@@ -93,19 +135,39 @@
         }
 
         .icon {
-            width: 3%;
+            width: 10%;
             height: 100%;
             padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
 
         .icon img {
             height: 33px;
-            width: 33px;
+            width: 43px;
+        }
+
+
+        .callnow {
+            position: absolute;
+            top: 10vh;
+            left: 0px;
+            width: 100%;
+            height: 7vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            opacity: 0.7;
         }
 
         .imagecontainer_main {
             width: 100%;
-            height: 60vh;
+            height: 64vh;
         }
 
         .imagecontainer_main img {
@@ -327,7 +389,7 @@
             outline: none;
             font-family: 'Arial';
             font-size: 16px;
-            
+
             width: 60%;
             height: 60%;
         }
@@ -422,35 +484,48 @@
             flex-direction: row-reverse;
         }
 
-        .callnow {
-            width: 100%;
-            height: 7vh;
-            background-color: black;
-            color: white;
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-        }
 
-        @media only screen and (max-width:500px) {
+
+        @media only screen and (max-width: 900px) {
             .icon {
-                width: 13%;
+                width: 35%;
+                height: 50%;
+            }
+
+            body::before {
+                height: 74vh;
             }
 
             nav {
                 justify-content: center;
             }
 
+            nav ul {
+                height: 50%;
+                width: 100%;
+            }
+
+            nav li {
+                width: 25%;
+            }
+
+            nav label {
+                width: 45%;
+                height: 50%;
+            }
+
             .imagecontainer_main {
-                height: 40vh;
+                height: 64vh;
             }
 
             .headerdiv_icon {
                 width: 100%;
                 height: 30vh;
                 border: none;
+            }
+
+            .headerdiv_icon img {
+                width: 60%;
             }
 
             .headerdiv_name {
@@ -512,7 +587,8 @@
             .contactmessage textarea {
                 width: 80%;
             }
-       .contactmessage textarea{
+
+            .contactmessage textarea {
                 height: 120px;
             }
 
@@ -521,7 +597,7 @@
             }
 
             .department_content {
-      text-align: justify;
+                text-align: justify;
                 width: 100%;
                 padding: 5px;
             }
@@ -541,23 +617,24 @@
             .callnow {
                 font-size: 15px;
             }
-.department_menu{
-width:100%;
-}
+
+            .department_menu {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
-<body>
+<body id="Home">
     <nav>
-        <div class="icon" id="Home">
+        <div class="icon">
             <img src="image/solidarity.png">
         </div>
         <label for="hospital">ASSP Hospital</label>
         <ul>
             <li><a href="#Home">Home</a></li>
-            <li><a href="#secondcard">About us</a></li>
-            <li><a href="#contactus">Contact us</a></li>
+            <li><a href="#secondcard">About</a></li>
+            <li><a href="#contactus">Contact</a></li>
             <li>
                 <form action="loginpage.php" method="post" name="formlogin" id="formlogin">
                     <select name="login" id="login" onchange="myfunction()">
@@ -571,10 +648,10 @@ width:100%;
         </ul>
     </nav>
     <div class="callnow">
-        <p>Emergency Number&nbsp;&nbsp;    835-587-6825</p>
+        <p>Emergency Number&nbsp;&nbsp; 835-587-6825</p>
     </div>
     <div class="imagecontainer_main">
-        <img src="image/head1.jpeg">
+        <!-- <img src="image/head1.jpeg"> -->
     </div>
     <div class="firstcard">
         <div class="headerdiv">
@@ -631,9 +708,14 @@ width:100%;
                 <img src="image/hm3.jpeg" alt="">
             </div>
             <div class="department_content">
-               The term cardiology is derived from the Greek words “cardia,” which refers to the heart and “logy” meaning “study of.” Cardiology is a branch of medicine that concerns diseases and disorders of the heart, which may range from congenital defects through to acquired heart diseases such as coronary artery disease and congestive heart failure.
+                The term cardiology is derived from the Greek words “cardia,” which refers to the heart and “logy”
+                meaning “study of.” Cardiology is a branch of medicine that concerns diseases and disorders of the
+                heart, which may range from congenital defects through to acquired heart diseases such as coronary
+                artery disease and congestive heart failure.
 
-Physicians who specialize in cardiology are called cardiologists and they are responsible for the medical management of various heart diseases. Cardiac surgeons are the specialist physicians who perform surgical procedures to correct heart disorders.
+                Physicians who specialize in cardiology are called cardiologists and they are responsible for the
+                medical management of various heart diseases. Cardiac surgeons are the specialist physicians who perform
+                surgical procedures to correct heart disorders.
             </div>
         </div>
     </div>
@@ -646,9 +728,13 @@ Physicians who specialize in cardiology are called cardiologists and they are re
                 <img src="image/hm14.jpeg" alt="">
             </div>
             <div class="department_content">
-              A dentist has many responsibilities, and one of the most important is promoting good dental hygiene. This helps to prevent complications in your mouth or other parts of the body.
+                A dentist has many responsibilities, and one of the most important is promoting good dental hygiene.
+                This helps to prevent complications in your mouth or other parts of the body.
 
-A dentist also diagnoses and treats problems of the gums, teeth, and mouth. Dentists use modern technology and equipment like X-ray machines, lasers, drills, brushes, scalpels, and other medical tools when performing dental procedures. They also wear protective equipment like gloves, masks, and safety glasses to prevent the spread of germs or bacteria.  </div>
+                A dentist also diagnoses and treats problems of the gums, teeth, and mouth. Dentists use modern
+                technology and equipment like X-ray machines, lasers, drills, brushes, scalpels, and other medical tools
+                when performing dental procedures. They also wear protective equipment like gloves, masks, and safety
+                glasses to prevent the spread of germs or bacteria. </div>
         </div>
     </div>
     <div class="department_cards" id="Pediatrician">
@@ -660,9 +746,14 @@ A dentist also diagnoses and treats problems of the gums, teeth, and mouth. Dent
                 <img src="image/hm12.jpeg" alt="">
             </div>
             <div class="department_content">
-               A pediatrician is a doctor who focuses on the health of infants, children, adolescents and young adults. Pediatric care starts at birth and lasts through a child’s 21st birthday or longer. Pediatricians prevent, detect and manage physical, behavioral and developmental issues that affect children. Some pediatricians work in general practice. Others specialize in treating children with specific health conditions.
+                A pediatrician is a doctor who focuses on the health of infants, children, adolescents and young adults.
+                Pediatric care starts at birth and lasts through a child’s 21st birthday or longer. Pediatricians
+                prevent, detect and manage physical, behavioral and developmental issues that affect children. Some
+                pediatricians work in general practice. Others specialize in treating children with specific health
+                conditions.
 
-Pediatricians undergo extensive education and training. First, they must get a four-year undergraduate degree. During undergrad, they take pre-medical courses such as biology and chemistry
+                Pediatricians undergo extensive education and training. First, they must get a four-year undergraduate
+                degree. During undergrad, they take pre-medical courses such as biology and chemistry
             </div>
         </div>
     </div>
@@ -675,11 +766,17 @@ Pediatricians undergo extensive education and training. First, they must get a f
                 <img src="image/hm10.jpeg" alt="">
             </div>
             <div class="department_content">
-             A neurologist is a physician specializing in neurology and trained to investigate, diagnose and treat neurological disorders. Neurologists treat a myriad of neurologic conditions, including stroke, seizures, movement disorders such as Parkinson's disease, autoimmune neurologic disorders such as multiple sclerosis, headache disorders like migraine and dementias such as Alzheimer's disease. Neurologists may also be involved in clinical research, clinical trials, and basic or translational research. While neurology is a nonsurgical specialty, its corresponding surgical specialty is neurosurgery.
+                A neurologist is a physician specializing in neurology and trained to investigate, diagnose and treat
+                neurological disorders. Neurologists treat a myriad of neurologic conditions, including stroke,
+                seizures, movement disorders such as Parkinson's disease, autoimmune neurologic disorders such as
+                multiple sclerosis, headache disorders like migraine and dementias such as Alzheimer's disease.
+                Neurologists may also be involved in clinical research, clinical trials, and basic or translational
+                research. While neurology is a nonsurgical specialty, its corresponding surgical specialty is
+                neurosurgery.
             </div>
         </div>
     </div>
-    <div class="contactus">
+    <div class="contactus" id="contactus">
         <div class="contactheading">
             <h2>Leave us a Message</h2>
         </div>
@@ -706,7 +803,7 @@ Pediatricians undergo extensive education and training. First, they must get a f
     <div class="secondlast">
         <center><a href="#Home">&#8657;&nbsp;Top</a></center>
     </div>
-    <div class="pagefooter" id="contactus">
+    <div class="pagefooter" id="footer">
         <div class="pagefooterbox1">
             <h1>Contact details</h1>
             <br>
@@ -717,7 +814,7 @@ Pediatricians undergo extensive education and training. First, they must get a f
                 </tr>
                 <tr>
                     <td>Email</td>
-                  <td><a href="mailto:prab8600@gmail.com"></a>Assphospital@gmail.com</td>
+                    <td><a href="mailto:prab8600@gmail.com"></a>Assphospital@gmail.com</td>
                 </tr>
                 <tr>
                     <td>Adress</td>
@@ -745,7 +842,7 @@ Pediatricians undergo extensive education and training. First, they must get a f
             </div>
         </div>
     </div>
-  <script>
+    <script>
         function myfunction() {
             var form1 = document.getElementById("formlogin");
             form1.submit();
