@@ -18,7 +18,7 @@ if (isset($_POST['patient_login'])) {
         session_start();
         $_SESSION['loggedIn'] = true;
         $_SESSION['$username'] = $email;
-      
+
         header("location: patientsample.php");
     } else {
         $patient_warning = "&#9888; Invalid login credentials, try again !";
@@ -142,9 +142,11 @@ if (isset($_POST['admin_login'])) {
             /* padding: 5px;  */
             margin-bottom: 25px;
         }
-.password {
-  margin-bottom:15px;
-      }
+
+        .password {
+            margin-bottom: 15px;
+        }
+
         .showpassword {
             display: flex;
             width: 90%;
@@ -158,7 +160,7 @@ if (isset($_POST['admin_login'])) {
 
         .showpassword input {
             width: 10%;
-          height:100%;
+            height: 100%;
         }
 
         .showpassword label {
@@ -191,7 +193,7 @@ if (isset($_POST['admin_login'])) {
             /* padding: 5px; */
             border: none;
             outline: none;
-          background-color:transparent;
+            background-color: transparent;
         }
 
         input::placeholder {
@@ -206,11 +208,12 @@ if (isset($_POST['admin_login'])) {
         .input_icon {
             width: 15%
         }
-      .input_icon img {
-        width:60%;
-        height:60%;
-        
-      }
+
+        .input_icon img {
+            width: 60%;
+            height: 60%;
+
+        }
 
         .btn {
             width: 100%;
@@ -256,11 +259,11 @@ if (isset($_POST['admin_login'])) {
                 font-size: 18px
             }
 
-            .back_btn , .btn
-            {
-            height: 35px;
-            font-size: 18px
-        }
+            .back_btn,
+            .btn {
+                height: 35px;
+                font-size: 18px
+            }
         }
     </style>
 </head>
@@ -303,7 +306,8 @@ if (isset($_POST['admin_login'])) {
                             <input type="hidden" name="login" value="patient">
                         </div>
                         <div class="showpassword">
-                            <input type="checkbox" id="show" onclick="showfunction()"><label for="show">Show Password</label>
+                            <input type="checkbox" id="show" onclick="showfunction()"><label for="show">Show
+                                Password</label>
                         </div>
                         <div class="submit_btn">
                             <button class="btn" type="submit" name="patient_login">Login</button>
@@ -343,8 +347,9 @@ if (isset($_POST['admin_login'])) {
                             <input type="password" name="password" id="password" placeholder=" Password" required>
                             <input type="hidden" name="login" value="doctor">
                         </div>
-                      <div class="showpassword">
-                            <input type="checkbox" id="show" onclick="showfunction()"><label for="show">Show Password</label>
+                        <div class="showpassword">
+                            <input type="checkbox" id="show" onclick="showfunction()"><label for="show">Show
+                                Password</label>
                         </div>
                         <div class="submit_btn">
                             <button class="btn" type="submit" name="doctor_login">Login</button>
@@ -355,8 +360,8 @@ if (isset($_POST['admin_login'])) {
                     </form>
                 </div>
                 <!-- <div class="formfooter">
-                                                <p>Don't have Account yet ? <a href="signup.html" >Register Now</a></p>
-                                            </div> -->
+                                                    <p>Don't have Account yet ? <a href="signup.html" >Register Now</a></p>
+                                                </div> -->
             <?
             }
             if ($status == "admin") {
@@ -384,8 +389,9 @@ if (isset($_POST['admin_login'])) {
                             <input type="password" name="password" id="password" placeholder=" Password" required>
                             <input type="hidden" name="login" value="admin">
                         </div>
-                      <div class="showpassword">
-                            <input type="checkbox" id="show" onclick="showfunction()"><label for="show">Show Password</label>
+                        <div class="showpassword">
+                            <input type="checkbox" id="show" onclick="showfunction()"><label for="show">Show
+                                Password</label>
                         </div>
                         <div class="submit_btn">
                             <button class="btn" type="submit" name="admin_login">Login</button>
@@ -396,8 +402,8 @@ if (isset($_POST['admin_login'])) {
                     </form>
                 </div>
                 <!-- <div class="formfooter">
-                                                <p>Don't have Account yet ? <a href="signup.html" >Register Now</a></p>
-                                            </div> -->
+                                                    <p>Don't have Account yet ? <a href="signup.html" >Register Now</a></p>
+                                                </div> -->
             <?
             }
             ?>
@@ -405,11 +411,11 @@ if (isset($_POST['admin_login'])) {
     </div>
     <script>
         function showfunction() {
-           var x = document.getElementById("password");
+            var x = document.getElementById("password");
             if (x.type === "password") {
                 x.type = "text";
             }
-            else{
+            else {
                 x.type = "password";
             }
         }       

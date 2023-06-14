@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             outline: none;
             border: none;
             border-bottom: 2px solid #c7c3c3;
-          color: #67676a;
+            color: #67676a;
         }
 
         input:hover {
@@ -209,13 +209,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         @media only screen and (max-width: 500px) {
-           .showpassword label {
-            width: 90%;           
-        }
-            .showpassword input { 
-              width: 10%;
-            height: 70%;
-        }
+            .showpassword label {
+                width: 90%;
+            }
+
+            .showpassword input {
+                width: 10%;
+                height: 70%;
+            }
+
             .container {
                 width: 95%;
                 border: none;
@@ -250,7 +252,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             .gender label {
                 margin-bottom: 12px;
             }
-			 .submit_btn{
+
+            .submit_btn {
                 width: 95%;
             }
 
@@ -306,10 +309,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <form action="" method="post" name="registration_form">
 
                         <label for="vFName"><b>First name</b></label>
-                        <input type="text" placeholder="Enter First name" name="vFName" id="vFName" required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
+                        <input type="text" placeholder="Enter First name" name="vFName" id="vFName" required
+                            pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
 
                         <label for="vLName"><b>Last name</b></label>
-                        <input type="text" placeholder="Enter last name" name="vLName" id="vLName" required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
+                        <input type="text" placeholder="Enter last name" name="vLName" id="vLName" required
+                            pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
 
                         <label for="vGender"><b>Gender</b></label>
                         <div class="gender">
@@ -362,7 +367,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
-       
+
         function showfunction() {
             var x = document.getElementById("psw");
             var y = document.getElementById("psw-repeat");

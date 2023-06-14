@@ -1,20 +1,19 @@
 <?
 include 'session.php';
 include 'dbconfig.php';
-$adminflag=$_REQUEST['adminflag'];
+$adminflag = $_REQUEST['adminflag'];
 $doctorname = $_REQUEST['doctorname'];
 $patientid = $_REQUEST['patiendid'];
 $appointmentid = $_REQUEST['appoinmentid'];
-$sql="SELECT * FROM patreg WHERE pid = '$patientid'";
-$result=mysqli_query($conn,$sql);
+$sql = "SELECT * FROM patreg WHERE pid = '$patientid'";
+$result = mysqli_query($conn, $sql);
 if (!$result) {
     echo "-10";
 }
 $valpatient = mysqli_num_rows($result);
 if (!$valpatient) {
     exit();
-}
-else {
+} else {
     while ($num = mysqli_fetch_assoc($result)) {
         $fname = $num['fname'];
         $lname = $num['lname'];
@@ -25,19 +24,18 @@ else {
 }
 
 $sql = "SELECT* FROM doctb WHERE username = '$doctorname'";
-$result= mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 if (!$result) {
     echo "-10";
 }
-$valdoctor=mysqli_num_rows($result);
+$valdoctor = mysqli_num_rows($result);
 if (!$valdoctor) {
     $doctorname = "Unknown";
     $doctorspec = "Unknown";
     $doctoremail = "Unknown";
     $doctorfees = "Unknown";
-}
-else {
-    while ($num=mysqli_fetch_assoc($result)) {
+} else {
+    while ($num = mysqli_fetch_assoc($result)) {
         $doctorname = $num['username'];
         $doctorspec = $num['spec'];
         $doctoremail = $num['email'];
@@ -46,15 +44,14 @@ else {
 }
 
 $sql = "SELECT * FROM prestb WHERE ID = '$appointmentid'";
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 if (!$result) {
     echo "-10";
 }
 $valpres = mysqli_num_rows($result);
 if (!$valpres) {
     exit();
-}
-else {
+} else {
     while ($num = mysqli_fetch_assoc($result)) {
         $disease = $num['disease'];
         $allergy = $num['allergy'];
@@ -81,7 +78,8 @@ else {
             /* margin: 0px;
             padding: 0px; */
         }
-        body{
+
+        body {
             background-image: url("image/bg15.jpg");
             background-repeat: no-repeat;
             background-size: cover;
@@ -96,7 +94,7 @@ else {
             font-size: 18px;
             width: 100%;
             height: 29cm;
-            border:2px solid black;
+            border: 2px solid black;
             /* margin-left: 0px; */
         }
 
@@ -192,7 +190,7 @@ else {
         hr {
             width: 80%;
             border: 2px solid black;
-            
+
             /* height: 2px; */
         }
 
@@ -244,25 +242,31 @@ else {
             padding-top: 16px;
             padding-right: 30px;
         }
-        #back{
+
+        #back {
             text-decoration: none;
             background-color: blue;
             color: white;
             font-size: 18px;
             padding: 5px 50px;
         }
-        @media only screen and (max-width:500px){
-         .doctor_information , .doctor_information {
-            width:100%;
-         } 
-         .container{
-            height: fit-content;
-         }  
-        
-         .divtable , .prescription_table{
-            width:90%;
-         }
-        
+
+        @media only screen and (max-width:500px) {
+
+            .doctor_information,
+            .doctor_information {
+                width: 100%;
+            }
+
+            .container {
+                height: fit-content;
+            }
+
+            .divtable,
+            .prescription_table {
+                width: 90%;
+            }
+
         }
     </style>
 </head>
@@ -272,16 +276,15 @@ else {
     <div class="btn">
         <button onclick="window.print()" id="print">Print</button>
         <a href="<?
-            if ($adminflag>0) {
-                echo "adminsample.php";
-            }
-            else {
-                echo "patientsample.php";
-            }
+        if ($adminflag > 0) {
+            echo "adminsample.php";
+        } else {
+            echo "patientsample.php";
+        }
         ?>" id="back">Back</a>
     </div>
     <div class="container">
-        
+
         <div class="headerdiv">
             <div class="icon">
                 <img src="image/solidarity1.png" class="icon_image">
@@ -296,28 +299,28 @@ else {
             <div class="patient_information">
                 <p class="heading">PATIENT INFORMATION</p>
                 <p>
-                    <? echo $fname."&nbsp;&nbsp;".$lname; ?>
+                    <? echo $fname . "&nbsp;&nbsp;" . $lname; ?>
                 </p>
                 <p>
-                    <?=$gender;?>
+                    <?= $gender; ?>
                 </p>
                 <p>
-                    <? echo $email;?>
+                    <? echo $email; ?>
                 </p>
                 <p>
-                    <? echo $contact;?>
+                    <? echo $contact; ?>
                 </p>
             </div>
             <div class="doctor_information">
                 <p class="heading">DOCTOR INFORMATION</p>
                 <p>Dr.
-                    <? echo $doctorname;?>
+                    <? echo $doctorname; ?>
                 </p>
                 <p>
-                    <? echo $doctorspec;?>
+                    <? echo $doctorspec; ?>
                 </p>
                 <p>
-                    <? echo $doctoremail;?>
+                    <? echo $doctoremail; ?>
                 </p>
             </div>
         </div>
@@ -336,9 +339,9 @@ else {
                 </div>
                 <div class="amount">
                     <div class="amounts">
-                            <? echo $doctorfees;?>
+                        <? echo $doctorfees; ?>
                     </div>
-                </div>    
+                </div>
             </div>
             <div class="divtable">
                 <div class="item">
@@ -346,7 +349,7 @@ else {
                 </div>
                 <div class="amount">
                     <div class="amounts">
-                        <? echo $doctorfees;?>
+                        <? echo $doctorfees; ?>
                     </div>
                 </div>
             </div>
@@ -363,7 +366,7 @@ else {
                 </div>
                 <div class="presciption_data">
                     <p>
-                        <? echo $disease;?>
+                        <? echo $disease; ?>
                     </p>
                 </div>
                 <div class="prescription_heading">
@@ -371,7 +374,7 @@ else {
                 </div>
                 <div class="presciption_data">
                     <p>
-                        <? echo $allergy;?>
+                        <? echo $allergy; ?>
                     </p>
                 </div>
                 <div class="prescription_heading">
@@ -379,7 +382,7 @@ else {
                 </div>
                 <div class="presciption_data">
                     <p>
-                        <? echo $prescription;?>
+                        <? echo $prescription; ?>
                     </p>
                 </div>
             </div>

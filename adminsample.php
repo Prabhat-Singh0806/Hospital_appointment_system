@@ -22,18 +22,18 @@ include 'dbconfig.php';
 
   <title>Document</title>
   <style>
-   
+
   </style>
 </head>
 
 <body class="adminbackgound">
 
-  
+
 
   <div class="bodybackground">
-  <?php
-  require("navbar.php")
-    ?>
+    <?php
+    require("navbar.php")
+      ?>
     <div>
       <div class="adminheader">
         <div class="himg">
@@ -51,13 +51,15 @@ include 'dbconfig.php';
             </div>
             <div class="adminoption">
               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form1"><button type="submit"
-                  name="form1" class="linkbutton"><b>view Doctor</b></button></form>
+                  name="form1" class="linkbutton"><b>view Doctor</b></button>
+              </form>
             </div>
             <div class="adminoption">
               <form action="registration.php">
-               <input type="hidden" value="1" name="admin"> 
-              <button type="submit" class="linkbutton"><b>Add
-                    Patient</b></button></form>
+                <input type="hidden" value="1" name="admin">
+                <button type="submit" class="linkbutton"><b>Add
+                    Patient</b></button>
+              </form>
             </div>
             <div class="adminoption">
               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form2"><button type="submit"
@@ -80,7 +82,7 @@ include 'dbconfig.php';
             </div>
           </div>
         </div>
-       
+
         <div class="showpane">
           <?
           if (isset($_POST['form1'])) {
@@ -96,19 +98,20 @@ include 'dbconfig.php';
           if (isset($_POST['search_patient'])) {
             require_once 'admin_function.php';
             $obj = new admin;
-            $searchedpatient=$_REQUEST['searchpatient'];
+            $searchedpatient = $_REQUEST['searchpatient'];
             $obj->view_admin_patient($searchedpatient);
           }
-         if (isset($_POST['form3'])) {
+          if (isset($_POST['form3'])) {
             require_once 'admin_function.php';
             $obj = new admin;
-            $searched=null;
+            $searched = null;
             $obj->view_admin_appointment($searched);
           }
           if (isset($_POST['search_appointment'])) {
             require_once 'admin_function.php';
             $obj = new admin;
-            $searched=$_REQUEST['searchpatientappoint'];;
+            $searched = $_REQUEST['searchpatientappoint'];
+            ;
             $obj->view_admin_appointment($searched);
           }
           if (isset($_POST['form4'])) {
@@ -160,11 +163,11 @@ include 'dbconfig.php';
       </div>
     </div>
   </div>
-   <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null,null,window.location.href);
-            }
-        </script>
+  <script>
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+  </script>
 </body>
 
 </html>

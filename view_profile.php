@@ -6,7 +6,7 @@ if (isset($_POST['view_pro'])) {
     $sql = "SELECT * FROM `patreg` WHERE pid = '$pid'";
     $result = mysqli_query($conn, $sql);
     while ($num = mysqli_fetch_assoc($result)) {
-        $pid=$num['pid'];
+        $pid = $num['pid'];
         $fname = $num['fname'];
         $lname = $num['lname'];
         $gender = $num['gender'];
@@ -25,11 +25,12 @@ if (isset($_POST['view_pro'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body{
-        background-image: url("image/bg9.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-      }
+        body {
+            background-image: url("image/bg9.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         .container {
             width: 50%;
             height: 50vh;
@@ -45,11 +46,12 @@ if (isset($_POST['view_pro'])) {
 
         .tableinternal {
             width: 60%;
-          overflow: scroll;
+            overflow: scroll;
         }
-      .tableinternal::-webkit-scrollbar {
-    display: none;
-}
+
+        .tableinternal::-webkit-scrollbar {
+            display: none;
+        }
 
         .firstcol,
         .secondcol {
@@ -59,44 +61,54 @@ if (isset($_POST['view_pro'])) {
             font-weight: bold;
             /* border-bottom: 1px solid; */
         }
-        .firstcol{
+
+        .firstcol {
             text-align: justify;
         }
-        .back{
+
+        .back {
             width: 80%;
             height: 10vh;
         }
-        .back a{
-           display: block;
-    text-decoration: none;
-    /* background-color: rgb(119 229 119); */
-    color: black;
-    padding: 10px;
-    width: 20%;
-    text-align: center;
-    font-weight: bold;
-    border: 2px solid green;
-        border-radius: 7px;  
+
+        .back a {
+            display: block;
+            text-decoration: none;
+            /* background-color: rgb(119 229 119); */
+            color: black;
+            padding: 10px;
+            width: 20%;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid green;
+            border-radius: 7px;
 
         }
-     .back a:hover {
-    background-color: green;
-    color: white;
-}
+
+        .back a:hover {
+            background-color: green;
+            color: white;
+        }
+
         @media only screen and (max-width:500px) {
-            .container, .tableinternal{
+
+            .container,
+            .tableinternal {
                 width: 95%;
             }
-          .back a{
-            padding: 8px;
-            width: 30%;            
-          }
-          .firstcol{
-          width: 25%;
-          }
-          .secondcol{
-              width: 60%;
-          }
+
+            .back a {
+                padding: 8px;
+                width: 30%;
+            }
+
+            .firstcol {
+                width: 25%;
+            }
+
+            .secondcol {
+                width: 60%;
+            }
         }
     </style>
 </head>
@@ -108,31 +120,32 @@ if (isset($_POST['view_pro'])) {
                 Name
             </div>
             <div class="secondcol">
-                <?=$fname?> &nbsp;&nbsp; <?=$lname?>
+                <?= $fname ?> &nbsp;&nbsp;
+                <?= $lname ?>
             </div>
             <div class="firstcol">
                 Email
             </div>
             <div class="secondcol">
-            <?=$email?>
+                <?= $email ?>
             </div>
             <div class="firstcol">
                 contact
             </div>
             <div class="secondcol">
-            <?=$mobile?>
+                <?= $mobile ?>
             </div>
             <div class="firstcol">
                 gender
             </div>
             <div class="secondcol">
-            <?=$gender?>
+                <?= $gender ?>
             </div>
             <div class="firstcol">
                 ID
             </div>
             <div class="secondcol">
-            <?=$pid?>
+                <?= $pid ?>
             </div>
         </div>
         <div class="back flexc">

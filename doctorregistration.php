@@ -217,10 +217,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h3>Doctor Registration</h3>
                     <?
                     if (isset($same)) {
-                        echo "&nbsp;<font color='red'><b>".$same."</b></font>";
+                        echo "&nbsp;<font color='red'><b>" . $same . "</b></font>";
                     }
                     if (isset($warning)) {
-                        echo "&nbsp;<font color='red'><b>".$warning."</b></font>";
+                        echo "&nbsp;<font color='red'><b>" . $warning . "</b></font>";
                     }
                     ?>
                 </div>
@@ -228,7 +228,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <form action="" method="post">
 
                         <label for="vUserName"><b>Username</b></label>
-                        <input type="text" placeholder=" enter username" name="vUserName" id="vUserName" required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
+                        <input type="text" placeholder=" enter username" name="vUserName" id="vUserName" required
+                            pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
 
                         <label for="vpassword"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="vpassword" id="vpassword" required>
@@ -237,7 +238,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="email" placeholder="Enter Email" name="vEmail" id="vEmail" required>
 
                         <label for="vspec"><b>Specification</b></label>
-                        <input type="text" placeholder="Enter specification of the doctor" name="vspec" id="vspec" required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
+                        <input type="text" placeholder="Enter specification of the doctor" name="vspec" id="vspec" required
+                            pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
 
                         <label for="vfees"><b>Doctor Fees</b></label>
                         <input type="number" placeholder="Enter Doctor Fees" name="vfees" id="vfees" required>
@@ -258,11 +260,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </div>
     </div>
- <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null,null,window.location.href);
-            }
-        </script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>

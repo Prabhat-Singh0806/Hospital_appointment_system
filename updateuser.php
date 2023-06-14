@@ -34,9 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($password != $cpassword) {
             $warning = "&#9888; password didn,t match try again";
-            
-        }
-        else {
+
+        } else {
             //checking if user alredy exist
             if ($email != $sEmail) {
                 $sql = "SELECT * FROM patreg WHERE email = '$sEmail'"; //checking for already registered email
@@ -48,8 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $val = mysqli_num_rows($return2);
                 if ($val != 0) {
                     $same_email = "&#9888; Already existing email";
-                } 
-                else {
+                } else {
                     $sql = "UPDATE `patreg` SET `fname` = '$sFName', `lname` = '$sLName', `gender` = '$sGender', `email` = '$sEmail', `contact` = '$sMobile', `password` = '$password', `cpassword` = '$cpassword' WHERE `patreg`.`pid` = '$pid';";
                     $result = mysqli_query($conn, $sql);
                     if (!$result) {
@@ -57,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 }
             }
-    
+
             if ($email == $sEmail) {
                 $sql = "UPDATE `patreg` SET `fname` = '$sFName', `lname` = '$sLName', `gender` = '$sGender', `email` = '$sEmail', `contact` = '$sMobile', `password` = '$password', `cpassword` = '$cpassword' WHERE `patreg`.`pid` = '$pid';";
                 $result = mysqli_query($conn, $sql);
@@ -65,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $warning = "Patient Updation Unsuccesfull try again";
                 }
             }
-            
+
         }
     }
 }
@@ -95,9 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             overflow: scroll;
             align-content: center;
         }
-font{
-    width: 100%;
-}
+
+        font {
+            width: 100%;
+        }
 
         .container {
             width: 50%;
@@ -225,9 +224,10 @@ font{
             input {
                 width: 100%;
             }
-          body{
-            height: 125vh;
-        }
+
+            body {
+                height: 125vh;
+            }
     </style>
 </head>
 
@@ -245,13 +245,13 @@ font{
             <?
             if ($result) {
                 ?>
-                    <div class="formheader" style="text-align: center;">
-                        <h3>Patient Updation Succesfull </h3>
-                    </div>
-                    <div class="submit_btn" style="width: 100%;">
-                        <a href="adminsample.php" class="back_btn">Click to continue</a>
-                    </div>
-                <?
+                <div class="formheader" style="text-align: center;">
+                    <h3>Patient Updation Succesfull </h3>
+                </div>
+                <div class="submit_btn" style="width: 100%;">
+                    <a href="adminsample.php" class="back_btn">Click to continue</a>
+                </div>
+            <?
             }
 
             if (!$result) {
@@ -271,30 +271,40 @@ font{
                     <form action="" method="post">
                         <input type="hidden" name="pid" value="<?= $pid ?>">
                         <label for="vFName"><b>First name</b></label>
-                        <input type="text" placeholder="Enter First name" name="vFName" id="vFName" value="<?=$fname?>" required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
+                        <input type="text" placeholder="Enter First name" name="vFName" id="vFName" value="<?= $fname ?>"
+                            required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
 
                         <label for="vLName"><b>Last name</b></label>
-                        <input type="text" placeholder="Enter last name" name="vLName" id="vLName" value="<?=$lname?>" required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
+                        <input type="text" placeholder="Enter last name" name="vLName" id="vLName" value="<?= $lname ?>"
+                            required pattern="[A-Za-z]{2,15}" title="Atleast 2 to 16 characters required">
 
                         <label for="vGender"><b>Gender</b></label>
                         <div class="gender">
-                            <input type="radio" name="vGender" id="Male" required value="Male" <?if ($gender=="Male") {echo "checked";}?>>
+                            <input type="radio" name="vGender" id="Male" required value="Male" <? if ($gender == "Male") {
+                                echo "checked";
+                            } ?>>
                             <label for="Male">Male</label>
-                            <input type="radio" name="vGender" id="Female" required value="Female" <?if ($gender=="Female") {echo "checked";}?>>
+                            <input type="radio" name="vGender" id="Female" required value="Female" <? if ($gender == "Female") {
+                                echo "checked";
+                            } ?>>
                             <label for="Female">Female</label>
                         </div>
 
                         <label for="vEmail"><b>Email</b></label>
-                        <input type="email" placeholder="Enter Email" name="vEmail" id="vEmail" value="<?=$email?>" required>
+                        <input type="email" placeholder="Enter Email" name="vEmail" id="vEmail" value="<?= $email ?>"
+                            required>
 
                         <label for="vMobile"><b>Mobile</b></label>
-                        <input type="number" placeholder="Enter mobile number" name="vMobile" id="vMobile" value="<?=$mobile?>" required pattern="[0-9]{10}" title="Only 10 digit numbers are allowed">
+                        <input type="number" placeholder="Enter mobile number" name="vMobile" id="vMobile"
+                            value="<?= $mobile ?>" required pattern="[0-9]{10}" title="Only 10 digit numbers are allowed">
 
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="vPassword" id="psw" value="<?=$rpassword?>" required>
+                        <input type="password" placeholder="Enter Password" name="vPassword" id="psw"
+                            value="<?= $rpassword ?>" required>
 
                         <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="vCPassword" id="psw-repeat" value="<?=$rcpassword?>" required>
+                        <input type="password" placeholder="Repeat Password" name="vCPassword" id="psw-repeat"
+                            value="<?= $rcpassword ?>" required>
                         <div class="submit_btn">
                             <button class="btn" type="submit" name="patient_updation">Update</button>
                         </div>
@@ -308,11 +318,11 @@ font{
             ?>
         </div>
     </div>
- <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null,null,window.location.href);
-            }
-        </script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>

@@ -4,18 +4,18 @@
 }
 
 .patient_login_body{
-  background: url(image/bg3.jpeg) no-repeat center center fixed;
+  background: url(../image/bg12.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
 
 .doctor_login_body{
-  background: url(image/bg6.jpeg) no-repeat center center fixed;
+  background: url(../image/bg16.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
 .admin_login_body{
-  background: url(image/bg4.jpeg) no-repeat center center fixed;
+  background: url(../image/bg9.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 

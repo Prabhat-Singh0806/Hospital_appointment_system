@@ -3,10 +3,10 @@
 include 'dbconfig.php';
 
 
-$name=$_REQUEST['name'];
-$email=$_REQUEST['email'];
-$contact=$_REQUEST['contact'];
-$message=$_REQUEST['message'];
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$contact = $_REQUEST['contact'];
+$message = $_REQUEST['message'];
 $sql = "INSERT INTO `contact` (`name`, `email`, `contact`, `message`) VALUES ('$name', '$email', '$contact', '$message');";
 $result = mysqli_query($conn, $sql);
 ?>
@@ -70,21 +70,23 @@ $result = mysqli_query($conn, $sql);
             width: 20%;
             padding: 5px;
             background-color: blue;
-            border-radius: 7px
-            ;
+            border-radius: 7px;
         }
-        @media only screen and (max-width:500px){
-            .container{
+
+        @media only screen and (max-width:500px) {
+            .container {
                 width: 95%;
                 border: none;
             }
+
             .feedback_close {
                 width: 50%;
             }
-          .content{
-            font-size:16px;
-            text-align: center;
-          }
+
+            .content {
+                font-size: 16px;
+                text-align: center;
+            }
 
         }
     </style>
@@ -95,31 +97,30 @@ $result = mysqli_query($conn, $sql);
         <?
         if ($result) {
             ?>
-             <div class="content">
-                 your feedback has been succesfully Submitted
+            <div class="content">
+                your feedback has been succesfully Submitted
             </div>
             <div class="btn_container">
                 <a href="index.html" class="feedback_close">Click to continue</a>
             </div>
-            <?
-        }
-        else {
+        <?
+        } else {
             ?>
-             <div class="content">
-                 your feedback has not been Submitted please contact Admin for further Assistance
+            <div class="content">
+                your feedback has not been Submitted please contact Admin for further Assistance
             </div>
-             <div class="btn_container">
+            <div class="btn_container">
                 <a href="index.html" class="feedback_close" style="background-color: red;">Click to continue</a>
-             </div>
-            <?
+            </div>
+        <?
         }
         ?>
     </div>
-   <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null,null,window.location.href);
-            }
-        </script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>

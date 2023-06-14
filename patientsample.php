@@ -25,48 +25,52 @@ while ($num = mysqli_fetch_assoc($result)) {
   <link rel="stylesheet" href="css/responsive.css">
   <title>Document</title>
   <style>
-    .linkbutton{
+    .linkbutton {
       border-radius: 7px;
     }
-   @media only screen and (max-width: 500px)
-.view {
-    width: 98%;
-}
-    .himg{
-  height: 10vh;
-  display: flex;flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.himg img{
-  width: 30px; 
-  height: 30px;
-}
+
+    @media only screen and (max-width: 500px) .view {
+      width: 98%;
+    }
+
+    .himg {
+      height: 10vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .himg img {
+      width: 30px;
+      height: 30px;
+    }
   </style>
 </head>
 
 <body id="patientbody">
 
   <?php
-    require("navbar.php")
-  ?>
+  require("navbar.php")
+    ?>
 
 
 
   <div class="heading">
     <div class="himg">
-      <img src="image/person-circle.svg">&nbsp;&nbsp;<? echo "<b>" . $fname . "  " . $lname."</b>"; ?>
+      <img src="image/person-circle.svg">&nbsp;&nbsp;
+      <? echo "<b>" . $fname . "  " . $lname . "</b>"; ?>
     </div>
     <hr><br>
   </div>
   <div class="flexcontainer">
     <div class="menupatient">
-       <div class="view">
-      <form action="view_profile.php?pid=<?= $pid ?>" method="post">
-        <button type="submit" class="linkbutton" name="view_pro">            
-          <b>
-            <p>View Profile</p>
-          </b></button>
+      <div class="view">
+        <form action="view_profile.php?pid=<?= $pid ?>" method="post">
+          <button type="submit" class="linkbutton" name="view_pro">
+            <b>
+              <p>View Profile</p>
+            </b></button>
         </form>
       </div>
       <div class="bookappointment imgborder">
@@ -103,7 +107,7 @@ while ($num = mysqli_fetch_assoc($result)) {
         $patientusername = $pid;
         $obj = new patient;
         $obj->view_patient_prescription($patientusername); //calling method from patientfunction.php though object of patient class
-      ?>
+        ?>
         <script> const element = document.getElementById('show'); element.scrollIntoView(); </script>
       <?
       }
@@ -137,16 +141,16 @@ while ($num = mysqli_fetch_assoc($result)) {
         $obj = new patient;
         $obj->cancel_appointment_patient($id);
         if ($obj == true) {
-         
+
           $patientusername = $_SESSION['$username'];
           $obj = new patient;
           $obj->view_patient_appointment($patientusername);
           ?>
-      <script>
-        var x = "<? echo $id;?>";
-        const element = document.getElementById(x); element.scrollIntoView(); </script>
-      <?
-          $id=0;
+          <script>
+            var x = "<? echo $id; ?>";
+            const element = document.getElementById(x); element.scrollIntoView(); </script>
+          <?
+          $id = 0;
         }
       }
 
@@ -154,11 +158,11 @@ while ($num = mysqli_fetch_assoc($result)) {
       ?>
     </div>
   </div>
-   <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null,null,window.location.href);
-            }
-        </script>
+  <script>
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+  </script>
 </body>
 
 </html>

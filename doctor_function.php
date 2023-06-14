@@ -7,15 +7,16 @@ class doctor
         try {
             include 'dbconfig.php';
             ?>
- <div style="
-                height: 10vh;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-            ">
+            <div style="
+                            height: 10vh;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                        ">
                 <form action="" method="post">
-                    <input type="search" class="searchbox" name="searchpatientdoctor" id="searchpatient" placeholder="Enter Patient name" required="">
+                    <input type="search" class="searchbox" name="searchpatientdoctor" id="searchpatient"
+                        placeholder="Enter Patient name" required="">
                     <button type="submit" class="searchbtn" name="search_patient_doctor">Search</button>
                 </form>
             </div>
@@ -32,10 +33,9 @@ class doctor
                     <th>Prescription</th>
                 </tr>
                 <?
-               if ($searchpatientdoctor) {
+                if ($searchpatientdoctor) {
                     $sql = "SELECT * FROM `prestb` WHERE doctor = '$doctorusername' AND fname = '$searchpatientdoctor'";
-                }
-                else {
+                } else {
                     $sql = "SELECT * FROM `prestb` WHERE doctor = '" . $doctorusername . "' ORDER BY `prestb`.`appdate` DESC ";
                 }
                 $result = mysqli_query($conn, $sql);
@@ -96,20 +96,21 @@ class doctor
         }
     }
 
-    public function view_doctor_appointment($doctorusername,$searchpatientdoctorappoint)
+    public function view_doctor_appointment($doctorusername, $searchpatientdoctorappoint)
     {
         try {
             include 'dbconfig.php';
             ?>
-<div style="
-                height: 10vh;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-            ">
+            <div style="
+                            height: 10vh;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                        ">
                 <form action="" method="post">
-                    <input type="search" class="searchbox" name="searchpatientdoctorappoint" id="searchpatient" placeholder="Enter Patient name" required="">
+                    <input type="search" class="searchbox" name="searchpatientdoctorappoint" id="searchpatient"
+                        placeholder="Enter Patient name" required="">
                     <button type="submit" class="searchbtn" name="search_patient_doctor_appoint">Search</button>
                 </form>
             </div>
@@ -126,7 +127,7 @@ class doctor
                     <th>prescribe</th>
                     <th>cancel</th>
                 </tr>
-                <?  if ($searchpatientdoctorappoint) {
+                <? if ($searchpatientdoctorappoint) {
                     $sql = "SELECT * FROM `appointmenttb` WHERE doctor = '$doctorusername' AND fname = '$searchpatientdoctorappoint'";
                 } else {
                     $sql = "SELECT * FROM `appointmenttb` WHERE doctor = '" . $doctorusername . "' ORDER BY `appointmenttb`.`appdate` DESC ";

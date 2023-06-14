@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("image/bg9.jpg");
+    background-image: url("../image/bg9.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }

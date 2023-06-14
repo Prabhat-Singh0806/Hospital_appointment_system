@@ -246,6 +246,7 @@ td {
   overflow-y: scroll;
   padding-left: 3px;
 }
+
 /* .showpane::-webkit-scrollbar{
   display: none;
 } */
@@ -305,7 +306,7 @@ td {
 }
 
 .patientbackgound {
-  background-image: url("image/bg9.jpg");
+  background-image: url("../image/bg9.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -314,13 +315,13 @@ td {
 }
 
 .doctorbackground {
-  background-image: url("image/bg12.jpg");
+  background-image: url("../image/bg12.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .adminbackgound {
-  background-image: url("image/bg16.jpg");
+  background-image: url("../image/bg16.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -339,24 +340,28 @@ td {
   width: 33px;
 }
 
-.searchbox{
+.searchbox {
   padding: 5px;
   outline: none;
- }
- .searchbtn{
+}
+
+.searchbtn {
   padding: 6px;
   color: white;
   background-color: green;
   border: none;
- }
-.himg{
+}
+
+.himg {
   height: 10vh;
-  display: flex;flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.himg img{
-  width: 30px; 
+
+.himg img {
+  width: 30px;
   height: 30px;
 }
 
@@ -364,16 +369,20 @@ td {
   .icon {
     width: 50%;
   }
-  .containeradmin , .containerdoctor{
+
+  .containeradmin,
+  .containerdoctor {
     grid-template-columns: 100% 100%;
   }
-  .showpane{
+
+  .showpane {
     grid-row: 2;
     grid-column: 1;
     height: fit-content;
     margin-top: 10vh;
   }
-  body{
+
+  body {
     height: fit-content;
   }
 
