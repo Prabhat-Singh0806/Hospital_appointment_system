@@ -1,9 +1,9 @@
 <?
 $servername = "localhost";
-$username = "prabhatsingh_root";
-$password = "prabhatsingh_root";
+$username = "root";
+$password = "root";
 //$password="";
-$dbname = 'prabhatsingh_myhmsdb';
+$dbname = 'myhmsdb';
 // Create conecction
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 //creating connection
